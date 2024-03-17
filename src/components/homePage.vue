@@ -1,13 +1,15 @@
 <template>
-  <div id="app">
-    <router-view/>
+  <div class="container">
+    注能
   </div>
 </template>
+
 <script>
 export default {
 
 }
 </script>
 
-<style lang="scss">
+<style>
+
 </style>
