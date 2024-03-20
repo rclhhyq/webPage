@@ -1,34 +1,24 @@
 <template>
 <div class="container">
-
-<!-- logo -->
-            <div class="logo">
-                <div class="blue_"></div>
-                <div class="purple_"></div>
-            </div>
-            <!-- logo -->
-
-            <!-- Header & Menu -->
-            <header>
-                <nav>
-                    <ul>
-                        <li>Home</li>
-                        <li>Shop</li>
-                        <li>Pages</li>
-                        <li>Conta</li>
-                    </ul>
-                </nav>
-            </header>
-            <!-- Header & Menu -->
-   <!-- Main Content -->
+  <div class="logo">
+      <div class="blue_"></div>
+      <div class="purple_"></div>
+  </div>
+   <header>
+       <nav>
+           <ul>
+               <li>Home</li>
+               <li>Shop</li>
+               <li>Pages</li>
+               <li>Conta</li>
+           </ul>
+       </nav>
+   </header>
  <div class="content">
-                <span>a yoga clud</span>
-                <h1>YOGA<br>FLEX</h1>
-                <h3>Life</h3>
-                <p>
-                    Schedule your Fitness Process
-                    <br>Who are in extremely love with eco friendly system.
-                </p>
+    <span>a yoga clud</span>
+    <h1>YOGA<br>FLEX</h1>
+    <h3>Life</h3>
+    <p>Schedule your Fitness Process<br>Who are in extremely love with eco friendly system.</p>
    <div class="cta">Our Featured <i class="bx bxs-leaf"></i></div>
  </div>
 <div class="atomContain">
@@ -165,10 +155,9 @@ export default {
 <style lang="scss" scoped>
 .container {
   width: 100vw;
-  height: 100vh;
+  height: 742px;
   position: relative;
   overflow: hidden;
-  background-image: linear-gradient(#402662, #3900A6);
 }
 
 header nav ul{
@@ -310,67 +299,67 @@ header nav ul li+li {
       box-shadow: inset 0 0 8px rgba(255,255, 255 ,.4),
       0 0 25px rgba(255, 255, 255 ,.8);
     }
-    .loader::after{
-      color: #CECECE;
-      position: absolute;
-      width: fit-content;
-      height: fit-content;
-      inset: 0;
-      /* text-align: center; */
-      margin: auto;
-      font-size: 24px;
-      text-transform: uppercase;
-      letter-spacing: 6px;
-    }
+.loader::after{
+  color: #CECECE;
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+  inset: 0;
+  /* text-align: center; */
+  margin: auto;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+}
     /* .loader::before{
       content: "";
       float: left;
       padding-top: 100%;
     } */
-    @keyframes loading {
-      0%{
-        transform: rotate(0);
-      }
-      100%{
-        transform: rotate(360deg);
-      }
-    }
-    .loader-circle{
-      position: absolute;
-      border-radius: 50%;
-      inset: 0;
-      opacity: .8;
-      mix-blend-mode: screen;
-      filter: brightness(120%);
-    }
-    .loader-circle:nth-of-type(1){
-      box-shadow: inset 1px 0 0 1px #025bf5,
-      2px 0 0 2px #035efa;
-      animation-direction: reverse;
-      transform-origin: 49.6% 49.8%;
-      animation: loading 2s infinite both;
-    }
-    .loader-circle:nth-of-type(2){
-      box-shadow: inset 1px 0 0 1px #ff1744,
-      2px 0 0 2px #ff1744;
-      animation-direction: reverse;
-      transform-origin: 49.5% 49.8%;
-      animation: loading 3s infinite both;
-    }
-    .loader-circle:nth-of-type(3){
-      box-shadow: inset 1px 0 0 1px #ffff04,
-      0 2px 0 2px #ffffbd;
-      animation-direction: reverse;
-      transform-origin: 49.8% 49.8%;
-      animation: loading 2s infinite both;
-    }
-    .loader-circle:nth-of-type(4){
-      box-shadow: inset 1px 0 0 1px #0beb55,
-      0 2px 0 2px #0af10a;
-      animation-direction: reverse;
-      transform-origin: 49.7% 49.7%;
-      animation: loading 3s infinite both;
-    }
+@keyframes loading {
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+.loader-circle{
+  position: absolute;
+  border-radius: 50%;
+  inset: 0;
+  opacity: .8;
+  mix-blend-mode: screen;
+  filter: brightness(120%);
+}
+.loader-circle:nth-of-type(1){
+  box-shadow: inset 1px 0 0 1px #025bf5,
+  2px 0 0 2px #035efa;
+  animation-direction: reverse;
+  transform-origin: 49.6% 49.8%;
+  animation: loading 2s infinite both;
+}
+.loader-circle:nth-of-type(2){
+  box-shadow: inset 1px 0 0 1px #ff1744,
+  2px 0 0 2px #ff1744;
+  animation-direction: reverse;
+  transform-origin: 49.5% 49.8%;
+  animation: loading 3s infinite both;
+}
+.loader-circle:nth-of-type(3){
+  box-shadow: inset 1px 0 0 1px #ffff04,
+  0 2px 0 2px #ffffbd;
+  animation-direction: reverse;
+  transform-origin: 49.8% 49.8%;
+  animation: loading 2s infinite both;
+}
+.loader-circle:nth-of-type(4){
+  box-shadow: inset 1px 0 0 1px #0beb55,
+  0 2px 0 2px #0af10a;
+  animation-direction: reverse;
+  transform-origin: 49.7% 49.7%;
+  animation: loading 3s infinite both;
+}
 
     // content
 .content {
@@ -389,7 +378,6 @@ header nav ul li+li {
 
 .content h1 {
     font-size: 6vw;
-    /* font-family: "", sans-serif; */
     text-transform: uppercase;
     font-weight: 900;
     letter-spacing: 2px;
@@ -399,7 +387,6 @@ header nav ul li+li {
 
 .content h3 {
     font-size: 5vw;
-    /* font-family: "", sans-serif; */
     font-weight: 200;
     text-transform: uppercase;
     color: #fff;

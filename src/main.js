@@ -3,10 +3,9 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import { gsap } from 'gsap'
-
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
 import '@/styles/newScss.css'
+import '@/icons/index.js'
 
 gsap.registerPlugin(ScrollTrigger)
 

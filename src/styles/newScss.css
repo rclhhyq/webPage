@@ -3,3 +3,9 @@
     padding: 0;
     margin: 0;
 }
+html {
+    scrollbar-width: none;
+}
+body {
+    background-image: linear-gradient(#402662, #3900A6,#000066,#6699FF, #4BE1EC);
+}
