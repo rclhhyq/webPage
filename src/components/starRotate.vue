@@ -1,58 +1,59 @@
 <template>
-<div class="container">
-  <div class="logo">
+  <div class="container">
+    <div class="logo">
       <div class="blue_"></div>
       <div class="purple_"></div>
-  </div>
-   <header>
-       <nav>
-           <ul>
-               <li>Home</li>
-               <li>Shop</li>
-               <li>Pages</li>
-               <li>Conta</li>
-           </ul>
-       </nav>
-   </header>
- <div class="content">
-    <span>a yoga clud</span>
-    <h1>YOGA<br>FLEX</h1>
-    <h3>Life</h3>
-    <p>Schedule your Fitness Process<br>Who are in extremely love with eco friendly system.</p>
-   <div class="cta">Our Featured <i class="bx bxs-leaf"></i></div>
- </div>
-<div class="atomContain">
-
- <div class="atom" ref="atom">
-  <div class="orbit">
-    <div class="path">
-      <div class="electron"></div>
+    </div>
+    <header>
+      <nav>
+        <ul>
+          <li>首页</li>
+          <li>详情</li>
+          <li>注册</li>
+          <li>登录</li>
+        </ul>
+      </nav>
+    </header>
+    <div class="content">
+      <span>a programmer clud</span>
+      <h1>merry<br />FLEX</h1>
+      <h3>Life</h3>
+      <p>
+        Prove your ability<br />Choose your preferred programming language
+      </p>
+      <div class="cta">Our Featured <i class="bx bxs-leaf"></i></div>
+    </div>
+    <div class="atomContain">
+      <div class="atom" ref="atom">
+        <div class="orbit">
+          <div class="path">
+            <div class="electron"></div>
+          </div>
+        </div>
+        <div class="orbit">
+          <div class="path">
+            <div class="electron"></div>
+          </div>
+        </div>
+        <div class="orbit">
+          <div class="path">
+            <div class="electron"></div>
+          </div>
+        </div>
+        <div class="orbit">
+          <div class="path">
+            <div class="electron"></div>
+          </div>
+        </div>
+        <div class="loader" data-text="loading">
+          <span class="loader-circle"></span>
+          <span class="loader-circle"></span>
+          <span class="loader-circle"></span>
+          <span class="loader-circle"></span>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="orbit">
-    <div class="path">
-      <div class="electron"></div>
-    </div>
-  </div>
-  <div class="orbit">
-    <div class="path">
-      <div class="electron"></div>
-    </div>
-  </div>
-  <div class="orbit">
-    <div class="path">
-      <div class="electron"></div>
-    </div>
-  </div>
-  <div class="loader" data-text="loading">
-    <span class="loader-circle"></span>
-    <span class="loader-circle"></span>
-    <span class="loader-circle"></span>
-    <span class="loader-circle"></span>
-  </div>
- </div>
- </div>
-</div>
 </template>
 
 <script>
@@ -66,41 +67,55 @@ export default {
     const dur = 4
     const del = 1
 
-    tl.fromTo(electron, { rotationX: 90 }, {
-      rotationZ: -360,
-      rotationX: 90,
-      ease: 'none',
-      duration: dur,
-      stagger: {
-        each: -del,
-        repeat: -1
-      }
-    }, 0)
-    tl.to(path, {
-      rotationZ: 360,
-      ease: 'none',
-      duration: dur,
-      stagger: {
-        each: -del,
-        repeat: -1
-      }
-    }, 0)
+    tl.fromTo(
+      electron,
+      { rotationX: 90 },
+      {
+        rotationZ: -360,
+        rotationX: 90,
+        ease: 'none',
+        duration: dur,
+        stagger: {
+          each: -del,
+          repeat: -1
+        }
+      },
+      0
+    )
+    tl.to(
+      path,
+      {
+        rotationZ: 360,
+        ease: 'none',
+        duration: dur,
+        stagger: {
+          each: -del,
+          repeat: -1
+        }
+      },
+      0
+    )
     // Add a rotation to the whole atom
     gsap.set(atom, { transformOrigin: 'center center' })
-    const atomTween = gsap.to(atom, { rotation: 360, ease: 'none', repeat: -1, duration: 200 })
+    const atomTween = gsap.to(atom, {
+      rotation: 360,
+      ease: 'none',
+      repeat: -1,
+      duration: 200
+    })
 
     // Skip the loading
     tl.progress(0.9999)
 
     const timeScaleTween = gsap.to(tl, {
-      duration: 0.75,
-      timeScale: 0.1,
+      duration: 4,
+      timeScale: 3,
       paused: true
     })
 
     const timeScaleatom = gsap.to(atomTween, {
-      duration: 0.75,
-      timeScale: 7,
+      duration: 4,
+      timeScale: 14,
       paused: true
     })
 
@@ -142,12 +157,16 @@ export default {
           amount: 0.3
         }
       })
-      .from('.atomContain', {
-        x: 40,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'power3.ease'
-      }, '>-0.5')
+      .from(
+        '.atomContain',
+        {
+          x: 40,
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power3.ease'
+        },
+        '>-0.5'
+      )
   }
 }
 </script>
@@ -160,67 +179,67 @@ export default {
   overflow: hidden;
 }
 
-header nav ul{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+header nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .logo {
-    width: 5vw;
-    height: 5vw;
-    border: 2px dotted rgba(255, 233, 233, .3);
-    position: absolute;
-    left: 5vw;
-    top: 2vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    transform: rotate(60deg);
-    border-radius: 5vw;
+  width: 5vw;
+  height: 5vw;
+  border: 2px dotted rgba(255, 233, 233, 0.3);
+  position: absolute;
+  left: 5vw;
+  top: 2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transform: rotate(60deg);
+  border-radius: 5vw;
 }
 
 .logo .blue_ {
-    width: 0.5vw;
-    height: 1.5vw;
-    background-color: #fff;
-    border-radius: 1.5vw;
-    margin-bottom: 5px;
+  width: 0.5vw;
+  height: 1.5vw;
+  background-color: #fff;
+  border-radius: 1.5vw;
+  margin-bottom: 5px;
 }
 
 .logo .purple_ {
-    width: 3vw;
-    height: 1vw;
-    background-color: #a02cff;
-    border-radius: 1vw;
+  width: 3vw;
+  height: 1vw;
+  background-color: #a02cff;
+  border-radius: 1vw;
 }
 header {
   position: absolute;
   z-index: 99;
   right: 2vw;
   top: 2vw;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    position: relative;
-    margin-left: 200px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  margin-left: 200px;
 }
 
 header nav ul {
-    list-style: none;
+  list-style: none;
 }
 
 header nav ul li {
-    padding: 10px 15px;
-    text-transform: uppercase;
-    counter-reset: #fff;
-    font-size: 10px;
-    letter-spacing: 1px;
-    cursor: pointer;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  counter-reset: #fff;
+  font-size: 10px;
+  letter-spacing: 1px;
+  cursor: pointer;
 }
 
-header nav ul li+li {
-    margin-left: 25px;
+header nav ul li + li {
+  margin-left: 25px;
 }
 .atomContain {
   position: absolute;
@@ -249,7 +268,7 @@ header nav ul li+li {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  border: 10px solid #9055FF88;
+  border: 10px solid #9055ff88;
   transform-style: preserve-3d;
   transform: rotateX(80deg) rotateY(20deg);
 }
@@ -279,28 +298,30 @@ header nav ul li+li {
   width: 6%;
   height: 6%;
   border-radius: 50%;
-  background: #FF0076;
-  opacity: .5;
-  box-shadow: 0 0 16px  #13E2DA,
-  0 0 6px  #13E2DA,
-  0 0 10px  #13E2DA;
+  background: #ff0076;
+  opacity: 0.5;
+  box-shadow: 0 0 16px #13e2da, 0 0 6px #13e2da, 0 0 10px #13e2da;
   // box-shadow: 0 0 4px deeppink;
 }
-.atom.changeColor{
-  filter: drop-shadow(0 0 60px #F40076) hue-rotate(360deg) brightness(5);
+.atom.changeColor {
+  filter: drop-shadow(0 0 60px #f40076) hue-rotate(360deg) brightness(5);
 }
-.loader{
-      position: absolute;
-      inset: 0;
-      margin: auto;
-      width: 6%;
-      height: 6%;
-      border-radius: 50%;
-      box-shadow: inset 0 0 8px rgba(255,255, 255 ,.4),
-      0 0 25px rgba(255, 255, 255 ,.8);
-    }
-.loader::after{
-  color: #CECECE;
+.loader {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 6%;
+  height: 6%;
+  border-radius: 50%;
+  box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.4),
+    0 0 25px rgba(255, 255, 255, 0.8);
+  transition: 2s;
+}
+.loader:hover {
+  transform: scale(2);
+}
+.loader::after {
+  color: #cecece;
   position: absolute;
   width: fit-content;
   height: fit-content;
@@ -311,110 +332,106 @@ header nav ul li+li {
   text-transform: uppercase;
   letter-spacing: 6px;
 }
-    /* .loader::before{
+/* .loader::before{
       content: "";
       float: left;
       padding-top: 100%;
     } */
 @keyframes loading {
-  0%{
+  0% {
     transform: rotate(0);
   }
-  100%{
+  100% {
     transform: rotate(360deg);
   }
 }
-.loader-circle{
+.loader-circle {
   position: absolute;
   border-radius: 50%;
   inset: 0;
-  opacity: .8;
+  opacity: 0.8;
   mix-blend-mode: screen;
   filter: brightness(120%);
 }
-.loader-circle:nth-of-type(1){
-  box-shadow: inset 1px 0 0 1px #025bf5,
-  2px 0 0 2px #035efa;
+.loader-circle:nth-of-type(1) {
+  box-shadow: inset 1px 0 0 1px #025bf5, 2px 0 0 2px #035efa;
   animation-direction: reverse;
   transform-origin: 49.6% 49.8%;
   animation: loading 2s infinite both;
 }
-.loader-circle:nth-of-type(2){
-  box-shadow: inset 1px 0 0 1px #ff1744,
-  2px 0 0 2px #ff1744;
+.loader-circle:nth-of-type(2) {
+  box-shadow: inset 1px 0 0 1px #ff1744, 2px 0 0 2px #ff1744;
   animation-direction: reverse;
   transform-origin: 49.5% 49.8%;
   animation: loading 3s infinite both;
 }
-.loader-circle:nth-of-type(3){
-  box-shadow: inset 1px 0 0 1px #ffff04,
-  0 2px 0 2px #ffffbd;
+.loader-circle:nth-of-type(3) {
+  box-shadow: inset 1px 0 0 1px #ffff04, 0 2px 0 2px #ffffbd;
   animation-direction: reverse;
   transform-origin: 49.8% 49.8%;
   animation: loading 2s infinite both;
 }
-.loader-circle:nth-of-type(4){
-  box-shadow: inset 1px 0 0 1px #0beb55,
-  0 2px 0 2px #0af10a;
+.loader-circle:nth-of-type(4) {
+  box-shadow: inset 1px 0 0 1px #0beb55, 0 2px 0 2px #0af10a;
   animation-direction: reverse;
   transform-origin: 49.7% 49.7%;
   animation: loading 3s infinite both;
 }
 
-    // content
+// content
 .content {
-    position: absolute;
-    left: 10vw;
-    top: 50%;
-    transform: translateY(-50%);
+  position: absolute;
+  left: 10vw;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .content span {
-    display: inline-block;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    font-size: 12px;
+  display: inline-block;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-size: 12px;
 }
 
 .content h1 {
-    font-size: 6vw;
-    text-transform: uppercase;
-    font-weight: 900;
-    letter-spacing: 2px;
-    line-height: 1;
-    color: #fff;
+  font-size: 6vw;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 2px;
+  line-height: 1;
+  color: #fff;
 }
 
 .content h3 {
-    font-size: 5vw;
-    font-weight: 200;
-    text-transform: uppercase;
-    color: #fff;
+  font-size: 5vw;
+  font-weight: 200;
+  text-transform: uppercase;
+  color: #fff;
 }
 
 .content p {
-    display: inline-block;
-    font-size: 12px;
-    line-height: 1.5;
-    margin-top: 20px;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1.5;
+  margin-top: 20px;
 }
 
 .content .cta {
-    display: flex;
-    align-items: center;
-    color: #a02cff;
-    font-size: 8px;
-    text-transform: uppercase;
-    margin-top: 20px;
-    letter-spacing: 2px;
-    position: relative;
+  display: flex;
+  align-items: center;
+  color: #a02cff;
+  font-size: 8px;
+  text-transform: uppercase;
+  margin-top: 20px;
+  letter-spacing: 2px;
+  position: relative;
 }
 
 .content .cta .bx {
-    margin-left: 5px;
-    color: #a02cff;
-    position: relative;
-    font-size: 18px;
-    top: 1px;
+  margin-left: 5px;
+  color: #a02cff;
+  position: relative;
+  font-size: 18px;
+  top: 1px;
 }
 </style>>

@@ -1,35 +1,31 @@
 <template>
   <div class="frostedContainer">
-    <!-- <div class="backImg">
-        <img src="@/assets/冰公主14.jpg" alt="">
-    </div> -->
     <div class="screenContain">
-        <div class="screen">
-          <div class="context">
-            <span>ues translate and perspective</span>
-            <h1>Three Dimensional</h1>
-            <p>Imagination is the only limit</p>
-          </div>
-          <div class="person">
+      <div class="screen">
+        <div class="context">
+          <span>ues translate and perspective</span>
+          <h1>Three Dimensional</h1>
+          <p>Imagination is the only limit</p>
+        </div>
+        <div class="person">
           <div class="container">
-              <img class="circle" src="#" alt="">
+            <img class="circle" src="@/assets/20240321233413.jpg" alt="" />
           </div>
-          <img class="img img1" src="@/assets/17_tipsy_4k.png" alt="">
+          <img class="img" src="@/assets/20240322004359.png" alt="" />
         </div>
+      </div>
+      <div class="iconContain">
+        <div class="qq frostedIcon">
+          <svg-icon icon-class="qq" class-name="qq-style"></svg-icon>
         </div>
-        <div class="iconContain">
-          <div class="qq frostedIcon">
-            <svg-icon icon-class="qq" class-name="qq-style"></svg-icon>
-          </div>
-          <div class="te frostedIcon">
-            <svg-icon icon-class="te" class-name="te-style"></svg-icon>
-          </div>
+        <div class="te frostedIcon">
+          <svg-icon icon-class="te" class-name="te-style"></svg-icon>
         </div>
-        <div class="textBox">
-          <p>LIFE IS A</p>
-          <span>FUCKING MOVIE</span>
-        </div>
-
+      </div>
+      <div class="textBox">
+        <p>LIFE IS A</p>
+        <span>FUCKING MOVIE</span>
+      </div>
     </div>
   </div>
 </template>
@@ -45,13 +41,17 @@ export default {
     const element = document.querySelector('.frostedContainer .screen')
     const iconContain = document.querySelector('.iconContain')
     // 节流
-    mouseOverContainer.addEventListener('mousemove', this.throttle((e) => {
-      this.transformElement(e.clientX, e.clientY, element, iconContain)
-    }, 1000 / 60))
+    mouseOverContainer.addEventListener(
+      'mousemove',
+      this.throttle((e) => {
+        this.transformElement(e.clientX, e.clientY, element, iconContain)
+      }, 1000 / 40)
+    )
     mouseOverContainer.addEventListener('mouseleave', (e) => {
       setTimeout(() => {
         element.style.transform = 'rotateY(0deg) rotateX(0deg)'
-        iconContain.style.transform = 'translateZ(200px) rotateY(0deg) rotateX(0deg)'
+        iconContain.style.transform =
+          'translateZ(200px) rotateY(0deg) rotateX(0deg)'
         // element.style.setProperty('--color', 'rgba(255, 255, 255, 1)')
       }, 50)
     })
@@ -61,20 +61,23 @@ export default {
       scrollTrigger: {
         trigger: '.screenContain',
         markers: false,
-        start: '50% bottom'
+        start: 'top 80%'
       }
     })
     t1.from('.screenContain', {
-      opacity: 0,
       scale: 0.7,
-      duration: 1
+      duration: 0.7
     })
-      .from('.context', {
-        duration: 0.5,
-        x: -40,
-        opacity: 0,
-        ease: 'power3.ease'
-      }, '>-0.4')
+      .from(
+        '.context',
+        {
+          duration: 0.5,
+          x: -40,
+          opacity: 0,
+          ease: 'power3.ease'
+        },
+        '>-0.3'
+      )
       .from('.textBox', {
         duration: 0.5,
         x: 100,
@@ -85,8 +88,8 @@ export default {
   methods: {
     transformElement (x, y, element, iconContain) {
       const box = element.getBoundingClientRect()
-      const calcy = (x - box.left - (box.width / 2)) / 35
-      const calcx = (y - box.top - (box.height / 2)) / 35 * -1
+      const calcy = (x - box.left - box.width / 2) / 35
+      const calcx = ((y - box.top - box.height / 2) / 35) * -1
       // const angle = Math.floor(this.getMouseAngle(y - box.top - (box.height / 2), x - box.left - (box.width / 2)))
       element.style.transform = `rotateY(${+calcy}deg) rotateX(${+calcx}deg)`
       iconContain.style.transform = `translateZ(400px) rotateY(${+calcy}deg) rotateX(${+calcx}deg)`
@@ -115,7 +118,6 @@ export default {
         }
       }
     }
-
   }
 }
 </script>
@@ -127,10 +129,10 @@ export default {
     initial-value: rgba(255, 255, 255, 1);
 } */
 .frostedContainer {
-    position: relative;
-    width: 100vw;
-    height: 1000px;
-    display: flex;
+  position: relative;
+  width: 100vw;
+  height: 1000px;
+  display: flex;
 }
 /* .backImg {
     position: absolute;
@@ -143,26 +145,26 @@ export default {
     height: 100%;
     object-fit: cover;
 } */
-.screenContain{
-    width: 70%;
-    height: 60%;
-    /* 会有弯曲的效果 但不好用 */
-    padding: 60px;
-    margin: auto;
-    transform-style: preserve-3d;
-    perspective: 1300px;
-    overflow: hidden;
-    position: relative;
+.screenContain {
+  width: 70%;
+  height: 60%;
+  /* 会有弯曲的效果 但不好用 */
+  padding: 60px;
+  margin: auto;
+  transform-style: preserve-3d;
+  perspective: 1300px;
+  overflow: hidden;
+  position: relative;
 }
 .screen {
-    width: 100%;
-    height: 100%;
-    border-radius: 40px;
-    backdrop-filter: blur(15px);
-    background-color: #000066;
-    /* mask-image: linear-gradient(var(--angle), var(--color), #fff,#fff); */
-    /* transition:  all 0.5s, --color 1s; */
-    transition: all 0.5s;
+  width: 100%;
+  height: 100%;
+  border-radius: 40px;
+  backdrop-filter: blur(15px);
+  background-color: #000066;
+  /* mask-image: linear-gradient(var(--angle), var(--color), #fff,#fff); */
+  /* transition:  all 0.5s, --color 1s; */
+  transition: 0.5s;
 }
 .iconContain {
   position: absolute;
@@ -172,18 +174,19 @@ export default {
   top: 0;
   pointer-events: none;
   transform: translateZ(200px);
-  transition:  all 0.8s;
+  transition: 0.7s;
 }
-.qq, .te{
+.qq,
+.te {
   position: absolute;
   left: 20%;
   top: 70%;
   width: 80px;
   height: 80px;
-  border: 2px solid  rgba(19, 226, 218, 0);
+  border: 2px solid rgba(19, 226, 218, 0);
   animation: 6s animate infinite;
 }
-.te{
+.te {
   left: 60%;
   top: 18%;
 }
@@ -197,7 +200,7 @@ export default {
   transform: translate(-50%, -50%);
   width: 130%;
   height: 130%;
-  border: 2px solid  rgba(19, 226, 218, 0);
+  border: 2px solid rgba(19, 226, 218, 0);
   animation: 6s animateFirst infinite;
 }
 
@@ -210,7 +213,7 @@ export default {
   transform: translate(-50%, -50%);
   width: 160%;
   height: 160%;
-  border: 2px solid  rgba(19, 226, 218, 0);
+  border: 2px solid rgba(19, 226, 218, 0);
   animation: 6s animateSecond infinite;
 }
 @keyframes animate {
@@ -220,7 +223,7 @@ export default {
   75% {
     border: 2px solid rgba(19, 226, 218, 1);
   }
-  80%{
+  80% {
     border: 2px solid rgba(19, 226, 218, 0);
   }
 }
@@ -228,57 +231,57 @@ export default {
   75% {
     border: 2px solid rgba(19, 226, 218, 0);
   }
-  80%{
+  80% {
     border: 2px solid rgba(19, 226, 218, 0.8);
   }
-  85%{
+  85% {
     border: 2px solid rgba(19, 226, 218, 0);
   }
 }
 @keyframes animateSecond {
-  80%{
+  80% {
     border: 2px solid rgba(19, 226, 218, 0);
   }
   85% {
     border: 2px solid rgba(19, 226, 218, 0.6);
   }
-  90%{
+  90% {
     border: 2px solid rgba(19, 226, 218, 0);
   }
 }
 
 /* 文字内容 */
 .context {
-    position: absolute;
-    left: 10vw;
-    top: 30%;
-    transform: translateY(-50%);
+  position: absolute;
+  left: 10vw;
+  top: 30%;
+  transform: translateY(-50%);
 }
 .context span {
-    display: inline-block;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    font-size: 12px;
+  display: inline-block;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-size: 12px;
 }
 .context h1 {
-    font-size: 6vw;
-    text-transform: uppercase;
-    font-weight: 900;
-    letter-spacing: 2px;
-    line-height: 1;
-    color: #fff;
+  font-size: 6vw;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 2px;
+  line-height: 1;
+  color: #fff;
 }
 .context p {
-    display: inline-block;
-    font-size: 12px;
-    line-height: 1.5;
-    margin-top: 20px;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1.5;
+  margin-top: 20px;
 }
 .context h3 {
-    font-size: 5vw;
-    font-weight: 200;
-    text-transform: uppercase;
-    color: #fff;
+  font-size: 5vw;
+  font-weight: 200;
+  text-transform: uppercase;
+  color: #fff;
 }
 /* 姓名 */
 .textBox {
@@ -287,15 +290,15 @@ export default {
   right: calc(40% + 60px);
 }
 
-.textBox p{
+.textBox p {
   font-size: 2vw;
   line-height: 1.5;
   margin-top: 20px;
-  color: #6699FF;
+  color: #6699ff;
 }
 .textBox span {
   margin-left: 6vw;
-  color: #2F80ED;
+  color: #2f80ed;
 }
 
 /* 头像 */
@@ -320,7 +323,7 @@ export default {
   justify-content: center;
   overflow: hidden;
 }
-.person:hover .circle{
+.person:hover .circle {
   transform: scale(1.1);
 }
 .circle {
@@ -330,7 +333,7 @@ export default {
   height: 100%;
   pointer-events: none;
   object-fit: cover;
-  transition: .3s;
+  transition: 0.3s;
 }
 .img {
   width: 180px;

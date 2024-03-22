@@ -6,19 +6,18 @@
     <div class="slideImg">
         <div class="imgContainer">
             <div class="imgTop">
-                <div class="imgItem"><img src="@/assets/tipsy.jpg" alt=""></div>
-                <div class="imgItem"><img src="" alt=""></div>
-                <div class="imgItem"><img src="" alt=""></div>
-                <div class="imgItem"><img src="" alt=""></div>
-                <div class="imgItem"><img src="" alt=""></div>
+                <div class="imgItem"><img src="@/assets/20240321234353.jpg" alt=""></div>
+                <div class="imgItem"><img src="@/assets/20240321234530.jpg" alt=""></div>
+                <div class="imgItem"><img src="@/assets/20240321234536.jpg" alt=""></div>
+                <div class="imgItem"><img src="@/assets/20240322000924.jpg" alt=""></div>
+                <div class="imgItem"><img src="@/assets/20240322000927.jpg" alt=""></div>
             </div>
             <div class="imgBottom">
-                <div class="imgItem"><img src="" alt=""></div>
-                <div class="imgItem"><img src="" alt=""></div>
-                <div class="imgItem bigImg"><img src="" alt=""></div>
-                <div class="imgItem"><img src="" alt=""></div>
-                <div class="imgItem"><img src="" alt=""></div>
-                <div class="imgItem"><img src="" alt=""></div>
+                <div class="imgItem"><img src="@/assets/20240321234322.jpg" alt=""></div>
+                <div class="imgItem"><img src="@/assets/20240321234535.jpg" alt=""></div>
+                <div class="imgItem"><img src="@/assets/20240321234532.jpg" alt=""></div>
+                <div class="imgItem"><img src="@/assets/20240321234535.jpg" alt=""></div>
+                <div class="imgItem"><img src="@/assets/20240322000926.jpg" alt=""></div>
             </div>
         </div>
     </div>
@@ -51,8 +50,7 @@ export default {
         trigger: '.slideImg',
         start: '40% top',
         end: '+=4000 bottom',
-        scrub: 1,
-        markers: true
+        scrub: 1
       }
     })
   }
@@ -82,9 +80,7 @@ export default {
     font-size: 8vw;
     color: white;
     text-shadow: 0 0 4px #CB5EEE,
-    0 0 8px #CB5EEE,
-    0 0 12px #CB5EEE,
-    0 0 18px #CB5EEE;
+    0 0 8px #CB5EEE;
 }
 .slideImg {
     position: sticky;
@@ -132,10 +128,7 @@ export default {
 }
 .imgItem:hover {
     transform: scale(0.9);
-    box-shadow: 0 0 2px 0 #CB5EEE,
-    0 0 6px 0 #CB5EEE,
-    0 0 8px 0 #CB5EEE,
-    inset 0 0 6px 0 #CB5EEE;
+    box-shadow: 0 0 2px 1px #F06966;
     filter: none;
 }
 .imgItem:hover img{
@@ -146,28 +139,33 @@ export default {
     left: 200px;
     width: 248px;
     height: 330px;
+    animation-delay: -2s;
 }
 .imgTop .imgItem:nth-child(2) {
     left: 20%;
     margin-top: 40px;
     width: 216px;
     height: 288px;
+    animation-delay: -4s;
 }
 .imgTop .imgItem:nth-child(3) {
     left: 48%;
     width: 485px;
     height: 273px;
+    animation-delay: -6s;
 }
 .imgTop .imgItem:nth-child(4) {
     left: 70%;
     width: 248px;
     height: 330px;
+    animation-delay: -8s;
 }
 .imgTop .imgItem:nth-child(5) {
     left: 88%;
     width: 133px;
     height: 187px;
     margin-top: 30px;
+    animation-delay: -10s;
 }
 
 /* imgBottom img */
@@ -175,32 +173,30 @@ export default {
     left: 0;
     width: 485px;
     height: 273px;
+    animation-delay: -10s;
 }
 .imgBottom .imgItem:nth-child(2) {
     left: 24%;
     width: 504px;
     height: 284px;
+    animation-delay: -8s;
 }
-.imgBottom .imgItem:nth-child(4) {
+.imgBottom .imgItem:nth-child(3) {
     left: 52%;
     width: 216px;
     height: 288px;
+    animation-delay: -6s;
 }
-.imgBottom .imgItem:nth-child(5) {
+.imgBottom .imgItem:nth-child(4) {
     left: 67%;
     width: 330px;
     height: 248px;
+    animation-delay: -4s;
 }
-.imgBottom .imgItem:nth-child(6) {
+.imgBottom .imgItem:nth-child(5) {
     left: 82%;
     width: 485px;
     height: 273px;
-}
-.bigImg.bigImg.bigImg {
-    left: 42%;
-    bottom: 67%;
-    width: 200px;
-    height: 200px;
-    opacity: 0;
+    animation-delay: -2s;
 }
 </style>

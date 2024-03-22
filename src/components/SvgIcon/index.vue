@@ -48,4 +48,9 @@ export default {
     height: 10vh;
     color: rgb(44, 133, 243);
 }
+.plane-style{
+  width: 10vh;
+  height: 10vh;
+  color: #000;
+}
 </style>
